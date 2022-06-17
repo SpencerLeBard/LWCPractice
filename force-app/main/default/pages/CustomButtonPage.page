@@ -1,0 +1,15 @@
+<apex:page standardController="Case" tabStyle="Case">
+    <apex:form >
+    	<apex:pageBlock title="Case Information">
+            <apex:inputField value="{!case.CaseNumber}"/>
+            <apex:inputField value="{!case.ContactId}"/>
+            <apex:inputField value="{!case.AccountId}"/>
+            <apex:inputField value="{!case.OwnerId}"/>
+            <apex:inputField value="{!case.Type}"/>
+            <apex:inputField value="{!case.Origin}"/>
+            <apex:inputField value="{!case.Reason}"/>
+            <apex:inputField value="{!case.Priority}"/>
+            <apex:inputField value="{!case.Status}"/>
+		</apex:pageBlock>
+    </apex:form>
+</apex:page>

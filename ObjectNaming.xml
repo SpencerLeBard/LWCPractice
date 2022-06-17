@@ -1,0 +1,85 @@
+<?xml version="1.0"?> 
+
+<ruleset name="Accenture custom rules"
+   xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">;;;
+
+  <description>Object Naming Conventions </description>
+    <rule name="ObjectNamingConventions"
+      language="xml"
+      message="Objects must be in upper camel case"
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+      <priority>3</priority>
+      <properties>
+      <property name="version" value="2.0"/>
+      <property name="xpath">
+        <value>
+<![CDATA[
+/label/text[
+not
+((starts-with(@Image, 'A')) or
+(starts-with(@Image, 'B')) or
+(starts-with(@Image, 'C')) or
+(starts-with(@Image, 'D')) or
+(starts-with(@Image, 'E')) or
+(starts-with(@Image, 'F')) or
+(starts-with(@Image, 'G')) or
+(starts-with(@Image, 'H')) or
+(starts-with(@Image, 'I')) or
+(starts-with(@Image, 'J')) or
+(starts-with(@Image, 'K')) or
+(starts-with(@Image, 'L')) or
+(starts-with(@Image, 'M')) or
+(starts-with(@Image, 'O')) or
+(starts-with(@Image, 'P')) or
+(starts-with(@Image, 'Q')) or
+(starts-with(@Image, 'R')) or
+(starts-with(@Image, 'S')) or
+(starts-with(@Image, 'T')) or
+(starts-with(@Image, 'U')) or
+(starts-with(@Image, 'V')) or
+(starts-with(@Image, 'W')) or
+(starts-with(@Image, 'X')) or
+(starts-with(@Image, 'Y')) or
+(starts-with(@Image, 'Z')) or
+(contains(@Image, '__'))
+)]  
+]]>
+        </value>
+      </property>
+      </properties>
+    </rule>
+</ruleset>
+
+<!-- /label/text[ not
+((starts-with(@Image, 'A')) or
+(starts-with(@Image, 'B')) or
+(starts-with(@Image, 'C')) or
+(starts-with(@Image, 'D')) or
+(starts-with(@Image, 'E')) or
+(starts-with(@Image, 'F')) or
+(starts-with(@Image, 'G')) or
+(starts-with(@Image, 'H')) or
+(starts-with(@Image, 'I')) or
+(starts-with(@Image, 'J')) or
+(starts-with(@Image, 'K')) or
+(starts-with(@Image, 'L')) or
+(starts-with(@Image, 'M')) or
+(starts-with(@Image, 'N')) or
+(starts-with(@Image, 'O')) or
+(starts-with(@Image, 'P')) or
+(starts-with(@Image, 'Q')) or
+(starts-with(@Image, 'R')) or
+(starts-with(@Image, 'S')) or
+(starts-with(@Image, 'T')) or
+(starts-with(@Image, 'U')) or
+(starts-with(@Image, 'V')) or
+(starts-with(@Image, 'W')) or
+(starts-with(@Image, 'X')) or
+(starts-with(@Image, 'Y')) or
+(starts-with(@Image, 'Z')))] |
+/label/text[(contains(@Image, '__'))] |
+/type/text[contains(@Image, 'Checkbox') and not
+(starts-with(@Image, 'is')) or starts-with(@Image, 'has')
+] -->

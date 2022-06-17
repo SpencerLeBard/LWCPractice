@@ -1,0 +1,17 @@
+<apex:page >
+<html> 
+    <head>  
+    HELLO APEX HTML TESTER
+    </head>  
+    <body>  
+        <referenceToBeTestedGood>  
+        </referenceToBeTestedGood>  
+        <reference_to_be_tested_bad>  
+        </reference_to_be_tested_bad>  
+
+        <p>A component to be tested for correct case</p>
+        <button name="badbutton" type="button" onclick="myFunction()">Try it</button>
+        <button name="goodButton" type="button" onclick="my-function()">Try it</button>
+    </body>  
+</html>  
+</apex:page>
