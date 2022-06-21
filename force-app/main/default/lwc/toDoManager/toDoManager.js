@@ -1,29 +1,10 @@
-import { LightningElement , track, wire } from 'lwc';
-// NOTE get something to work with @wire from apex method (create one that does SOQL query)
-import accountQuery from '@salesforce/apex/QueryAccounts.accountQuery'
-
+import { LightningElement , track} from 'lwc';
 export default class ToDoManager extends LightningElement {
 
     //private properties not reactive, use @track to make private property reactive
     @track time = "8:15";
     @track greeting = "Hello World";
-
     @track todos = [];
-    @track accountsList;
-
-
-    @wire(accountQuery)
-    getAccounts({ data, error }) {
-        if (data) {
-            this.results = data.map(account => {
-                return { Id: account.id, Name: account.Name };
-            });
-           // this.results.forEach(x => accountsList.push(x))
-        } else if (error) {
-            this.searchOptions = undefined;
-            this.error = error;
-        }
-    }
 
    //lifecycle methods are part of LWC famework and gets automaticlly invoked by the framework itself 
    connectedCallback(){
@@ -44,7 +25,7 @@ export default class ToDoManager extends LightningElement {
         this.setGreeting(hour);
     }
 
-        //TODO get rid of this bs and see what happens
+        //TODO change this to if statements
 
     getHour(hour){
         return hour === 0 ? 12 : hour > 12 ? (hour - 12) : hour;

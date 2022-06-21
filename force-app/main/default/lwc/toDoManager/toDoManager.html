@@ -17,16 +17,16 @@
         <lightning-layout-item>
             <lightning-layout>
                 <lightning-layout-item>
-                    <lightning-input type="text" label="Tell us everything" placeholder="toDo"></lightning-input>
+            <lightning-input type="text" label="Tell us everything" placeholder="toDo"></lightning-input>
                     <lightning-layout-item>
                         <lightning-button-icon 
-                        icon-name="utility:add" title="add todo" onclick={addToDoHandler}>
+                        icon-name="utility:add" title="add todo" onclick={addToDoHandler}><label>label</label>
                     </lightning-button-icon>
                 </lightning-layout-item >
         </lightning-layout-item>
     </lightning-layout>
 </lightning-layout-item>
-
+<button class="slds-button slds-button_success" onclick={getAccounts}>Look for Accounts</button>
 <lightning-layout-item>
     <div>UPCOMING TASKS</div>
     <!-- interating over array (item is local variable) -->
@@ -36,9 +36,8 @@
             <lightning-button-icon icon-name="utility:check"  onclick={updateHandler} title="Update ToDo"></lightning-button-icon>
             <lightning-button-icon icon-name="utility:delete" onclick={deleteHandler} title="Delete"></lightning-button-icon>
         </div>
-    </template>
+    </template>    
 </lightning-layout-item>
-
 </div>
 </lightning-layout>
 </template>
