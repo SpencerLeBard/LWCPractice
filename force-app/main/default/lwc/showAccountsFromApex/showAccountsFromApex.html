@@ -1,0 +1,9 @@
+<template>
+    <div class="conatinerBackground">
+        <template for:each={accountList} for:item="account">
+            <div class="item-class" key={account.Id}>
+                <span class="slds-text-heading_label accounts">{account.Name}</span>
+            </div>
+        </template>
+    </div>
+</template>
