@@ -16,10 +16,12 @@ export default class ShowAccountsFromApex extends LightningElement {
         this.accountList = data
         for(let accounts of this.accountList){
             console.log(accounts.Name)
+            this.accountsList.push(accounts)
         }
 
         } else if (error){
-            this.error = error        
+            this.error = error  
+            console.log(this.error)      
         }
     }
 
