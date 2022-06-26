@@ -6,13 +6,10 @@ export default class ShowAccountsFromApex extends LightningElement {
     accountsList = [];
     @track accounts;
 
-
+connectedCallback(){}
     @wire(accountQuery)
     getAccounts({ data, error }) {
         if(data){
-        //NOTE this displays 'john' : this.accountsList = data[0].Name
-        //console.log(this.accountsList)
-
         this.accountList = data
         for(let accounts of this.accountList){
             console.log(accounts.Name)
@@ -24,5 +21,4 @@ export default class ShowAccountsFromApex extends LightningElement {
             console.log(this.error)      
         }
     }
-
 }

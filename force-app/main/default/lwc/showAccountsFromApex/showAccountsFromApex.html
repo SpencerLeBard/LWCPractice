@@ -1,5 +1,6 @@
 <template>
     <div class="conatinerBackground"> <p>This displays: SOQL -> Apex -> LWC</p>
+        <button class="slds-button slds-button_success" onclick={getAccounts}>Look for Accounts</button>
         <template for:each={accountList} for:item="account">
             <div class="item-class" key={account.Id}>
                 <span class="slds-text-heading_label accounts">{account.Name}</span>
