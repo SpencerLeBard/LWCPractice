@@ -1,7 +1,10 @@
+<!-- sldsValidatorIgnore -->
 <template>
     <div class="conatinerBackground"> <p>This displays: SOQL -> Apex -> LWC</p>
-        <button class="slds-button slds-button_success" onclick={getAccounts}>Look for Accounts</button>
-        <template for:each={accountList} for:item="account">
+        <!-- make accounts hidden until click button using boolCanSee variable-->
+        <button class="slds-button slds-button_success" onclick={changeBoolCanSee}>Show Accounts</button>
+        <button class="slds-button slds-button_destructive" onclick={changeBoolCannotSee}>Hide Accounts</button>
+        <template if:true={boolCanSee} for:each={accountsList} for:item="account">
             <div class="item-class" key={account.Id}>
                 <span class="slds-text-heading_label accounts">{account.Name}</span>
             </div>

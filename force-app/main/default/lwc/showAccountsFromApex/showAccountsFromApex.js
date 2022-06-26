@@ -3,22 +3,26 @@ import accountQuery from '@salesforce/apex/QueryAccounts.accountQuery';
 
 
 export default class ShowAccountsFromApex extends LightningElement {
-    accountsList = [];
+    @track accountsList = [];
     @track accounts;
+    @track boolCanSee = false;
 
-connectedCallback(){}
+    changeBoolCanSee(){
+        this.boolCanSee = true
+    }
+    changeBoolCannotSee(){
+        this.boolCanSee = false
+    }
+
     @wire(accountQuery)
     getAccounts({ data, error }) {
         if(data){
         this.accountList = data
-        for(let accounts of this.accountList){
-            console.log(accounts.Name)
-            this.accountsList.push(accounts)
+        for(let account of this.accountList){
+            this.accountsList.push(account)
         }
-
         } else if (error){
             this.error = error  
-            console.log(this.error)      
         }
     }
 }
