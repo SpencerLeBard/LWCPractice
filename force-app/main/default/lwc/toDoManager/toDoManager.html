@@ -17,7 +17,7 @@
         <lightning-layout-item>
             <lightning-layout>
                 <lightning-layout-item>
-            <lightning-input type="text" label="Tell us everything" placeholder="toDo"></lightning-input>
+            <lightning-input type="text" label="What do you have going on?" placeholder="toDo"></lightning-input>
                     <lightning-layout-item>
                         <lightning-button-icon 
                         icon-name="utility:add" title="add todo" onclick={addToDoHandler}><label>label</label>
@@ -26,17 +26,20 @@
         </lightning-layout-item>
     </lightning-layout>
 </lightning-layout-item>
-<lightning-layout-item>
+<lightning-layout-item class="slds-align_absolute-center slds-text-align_center">
     <div>UPCOMING TASKS</div>
     <!-- interating over array (item is local variable) -->
-    <template for:each={todos} for:item="todo">
-        <div class="item-class" key={todo.toDoId}>
-            <span class="slds-text-heading_label">{todo.toDoName}</span>
-            <lightning-button-icon icon-name="utility:check"  onclick={updateHandler} title="Update ToDo"></lightning-button-icon>
-            <lightning-button-icon icon-name="utility:delete" onclick={deleteHandler} title="Delete"></lightning-button-icon>
-        </div>
-    </template>    
-</lightning-layout-item>
+    <div class="slds-align_absolute-center slds-text-align_center">
+
+        <template for:each={todos} for:item="todo">
+            <div class="item-class" key={todo.toDoId}>
+                <span class="slds-text-heading_label">{todo.toDoName}</span>
+                <lightning-button-icon icon-name="utility:check"  onclick={updateHandler} title="Update ToDo"></lightning-button-icon>
+                <lightning-button-icon icon-name="utility:delete" onclick={deleteHandler} title="Delete"></lightning-button-icon>
+            </div>
+        </template>    
+    </div>
+    </lightning-layout-item>
 </div>
 </lightning-layout>
 </template>
