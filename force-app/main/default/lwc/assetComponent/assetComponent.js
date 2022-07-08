@@ -3,7 +3,7 @@ import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 
 import NAME_FIELD from '@salesforce/schema/Asset.Name';
 
-//NOTE need to create apex class that grabs assets and field names
+//NOTE need to create apex class that grabs assets and field names and then i can display
 
 
 export default class AssetComponent extends LightningElement {
