@@ -12,7 +12,7 @@ export default class AssetComponent extends LightningElement {
     @wire(getRecord, { recordId: '$recordId', NAME_FIELD }) asset;
 
     get assetName() {
-        return getFieldValue(this.contact.data, NAME_FIELD);
+        return getFieldValue(this.asset.data, NAME_FIELD);
     }
 
         connectedCallback(){
