@@ -1,16 +1,18 @@
 <template>
-    <lightning-card class="cardClass"> Testing Record ID Component
-        <input type="text" onchange={handleIdChange} label="Record ID"></lightning>
-        <lightning-record-view-form
-        record-id={recordId}
-        object-api-name={assObject}>
-    <div class="slds-grid">
-        <div class="slds-col slds-size_1-of-2">
-            <lightning-formatted-text value={nameValue}
-                class="slds-text-heading_large">
-            </lightning-formatted-text>
+    <lightning-card class="cardClass">
+        <div class="header"> <h1> Input record ID of Asset and you will get a Name</h1>
+            <input type="text" onchange={handleIdChange} placeholder="Record ID"></lightning>
+            <lightning-record-view-form
+            record-id={recordId}
+            object-api-name={assObject}>
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-formatted-text value={nameValue}
+                    class="slds-text-heading_large">
+                </lightning-formatted-text>
+            </div>
         </div>
-    </div>
-</lightning-record-view-form>
+    </lightning-record-view-form>
+</div>
 </lightning-card>
 </template>
