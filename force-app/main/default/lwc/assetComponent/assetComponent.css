@@ -1,3 +1,7 @@
 .cardClass {
-    background: white;
+    background-color: black;
+}
+
+.nameCSS {
+    color: white;
 }
