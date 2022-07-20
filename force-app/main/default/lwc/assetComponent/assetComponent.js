@@ -8,7 +8,7 @@ export default class assetComponent extends LightningElement {
     /** Id of record to display. */
     @api recordId;
 
-    currentRecordId
+    currentRecordId;
 
     connectedCallback(){
         console.log('hello')
