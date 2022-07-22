@@ -29,7 +29,11 @@ export default class assetComponent extends LightningElement {
 
     /** Get the Asset.Name value. */
     get nameValue() {
-        console.log('getting name: '+ NAME_FIELD)
+        console.log(this.record.data)
         return this.record.data ? getFieldValue(this.record.data, 'Asset.Name') : '';
     }
+    // get emailValue() {
+    //     console.log(this.record.data)
+    //     return this.record.data ? getFieldValue(this.record.data, 'Account.Owner.Email') : '';
+    //  }
 }
