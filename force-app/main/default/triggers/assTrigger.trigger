@@ -1,3 +1,3 @@
-trigger assTrigger on SOBJECT (before insert) {
+trigger assTrigger on Asset (before insert) {
     
 }
