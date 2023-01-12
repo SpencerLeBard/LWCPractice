@@ -7,6 +7,7 @@
     <trackFeedHistory>false</trackFeedHistory>
     <type>Picklist</type>
     <valueSet>
+        <controllingField>SLA__c</controllingField>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -25,5 +26,20 @@
                 <label>Yes</label>
             </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Bronze</controllingFieldValue>
+            <controllingFieldValue>Silver</controllingFieldValue>
+            <valueName>Maybe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold</controllingFieldValue>
+            <controllingFieldValue>Silver</controllingFieldValue>
+            <valueName>No</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platinum</controllingFieldValue>
+            <controllingFieldValue>Silver</controllingFieldValue>
+            <valueName>Yes</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>
