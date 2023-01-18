@@ -1,29 +1,7 @@
 <template >
     <lightning-card class="top-card">
-        <div class="slds-m-top_medium slds-m-bottom_x-large">
-            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
-            Contact Searcher
-        </h2>
-        <!-- Text Box -->
-        <div class="slds-p-around_medium lgc-bg">
-            <lightning-input type="text" label="Enter Contact Name (Must Match Perfectly)" placeholder="type here..."></lightning-input>
-        </div>
-    </div>
-    <!-- Record Card -->
-    <lightning-card  title="Contact">
-        <div class="slds-p-horizontal_small">
-            <!-- Record -->
-            <div for:each={contactList} for:item="contact" key={contact.id}>
-                {contact.Name}
-            </div>
-        </div>
-        <p slot="footer">Card Footer</p>
+        <lightning-input name="param" value={param} onchange={handleClick} ></lightning-input>
+        <lightning-button label="Search Contacts" onclick={getContacts}></lightning-button>
+        <lightning-datatable key-field="id" data={data} columns="columns"></lightning-datatable>
     </lightning-card>
-    <!-- Button -->
-    <lightning-button label="Submit" slot="actions"></lightning-button>
-    <h2 class="slds-text-heading_small slds-m-bottom_small">
-        Click the buttons to activate the <code>onclick</code> handler and view the label of the 
-        clicked button.
-    </h2>
-</lightning-card>
 </template>
