@@ -1,7 +1,7 @@
 <template >
     <lightning-card class="top-card">
-        <lightning-input name="param" value={param} onchange={handleClick} ></lightning-input>
-        <lightning-button label="Search Contacts" onclick={getContacts}></lightning-button>
-        <lightning-datatable key-field="id" data={data} columns="columns"></lightning-datatable>
+        <lightning-input name="param" value={param} onchange={handleClick} >Top Header</lightning-input>
+        <lightning-button label="Search Contacts" onclick={getContacts}>Button Title</lightning-button>
+        <lightning-datatable key-field="id" data={data} columns="columns">Data Dable Title</lightning-datatable>
     </lightning-card>
 </template>
