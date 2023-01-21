@@ -16,21 +16,22 @@ export default class SearchBox extends LightningElement {
     @track data = [];
     @track columns = columns;
     @track param = ''
+    @track clickedButtonLabel;
     
 
     @wire(contactQuery)
     getContact({data, error}){
         if(data){
             this.contactList = data
+            console.log(this.contactsList)
         }else if (error){
             this.error = error
         }
    
     }
 
-    @track clickedButtonLabel;
-
     handleClick(event) {
         this.clickedButtonLabel = event.target.label;
+        console.log('clicked')
     }
 }
