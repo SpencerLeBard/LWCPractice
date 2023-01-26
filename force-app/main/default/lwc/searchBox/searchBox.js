@@ -18,8 +18,11 @@ export default class SearchBox extends LightningElement {
     @track param = ''
     @track clickedButtonLabel;
     
+    handleClick(event) {
+        this.clickedButtonLabel = event.target.label;
+    }
 
-    @wire(contactQuery)
+    @wire(contactQuery , {contactInput: '$param'})
     getContact({data, error}){
         if(data){
             this.contactList = data
@@ -30,8 +33,4 @@ export default class SearchBox extends LightningElement {
    
     }
 
-    handleClick(event) {
-        this.clickedButtonLabel = event.target.label;
-        console.log('clicked')
-    }
 }
