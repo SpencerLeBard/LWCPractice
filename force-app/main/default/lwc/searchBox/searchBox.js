@@ -6,7 +6,6 @@ const columns = [
     { label: 'First Name' , fieldName: 'FirstName'} ,
     { label: 'Last Name' , fieldName: 'LastName'} ,
     { label: 'Name' , fieldName: 'Name'}
-
 ]; 
 export default class SearchBox extends LightningElement {
 
@@ -29,6 +28,7 @@ export default class SearchBox extends LightningElement {
             console.log(this.contactsList)
         }else if (error){
             this.error = error
+            console.error(this.error)
         }
    
     }
