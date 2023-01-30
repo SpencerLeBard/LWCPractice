@@ -1,5 +1,6 @@
 <template >
     <lightning-card class="top-card"> Contacts Search
+        <!-- TODO: Add modal somehow -->
         <lightning-input name="param" value={param} onchange={handleClick}></lightning-input>
         <lightning-button label="Search Contacts" onclick={getContacts}>Button Title</lightning-button>
         <lightning-datatable key-field="id" data={contactsList} columns="columns">Data Dable Title</lightning-datatable>
