@@ -17,6 +17,7 @@ export default class SearchBox extends LightningElement {
     @track param = ''
     @track clickedButtonLabel;
     
+    //need to handle this click through a method
     handleClick(event) {
         this.clickedButtonLabel = event.target.label;
     }
