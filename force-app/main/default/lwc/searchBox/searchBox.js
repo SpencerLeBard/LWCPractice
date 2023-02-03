@@ -5,7 +5,6 @@ const columns = [
     { label: 'Id' , fieldName: 'Id'} ,
     { label: 'First Name' , fieldName: 'FirstName'} ,
     { label: 'Last Name' , fieldName: 'LastName'} ,
-    { label: 'Name' , fieldName: 'Name'}
 ]; 
 export default class SearchBox extends LightningElement {
 
@@ -17,21 +16,22 @@ export default class SearchBox extends LightningElement {
     @track param = ''
     @track clickedButtonLabel;
 
-    @track arr = [];
+    @track contactArr = [];
     
     //need to handle this click through a method
     handleClick(event) {
         this.clickedButtonLabel = event.target.label;
-        console.log('click')
+        console.log('click in search box')
     }
 
+    // TODO : Apparently this wire method fires as it renders like a connected callback
+    // but does not do anything when i click the button :(
     @wire(contactQuery , {contactInput: '$param'})
     getContact({data, error}){
+        console.log('hit getcontact method')
         if(data){
-            this.contactList = data
-            for(let contact of this.contactList){
-                console.log(contact)
-            }
+            this.contactList = data.data
+            console.log('has data')
         }else if (error){
             this.error = error
             console.error(this.error)
