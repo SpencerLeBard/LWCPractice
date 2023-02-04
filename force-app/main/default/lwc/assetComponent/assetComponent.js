@@ -11,7 +11,7 @@ export default class assetComponent extends LightningElement {
     currentRecordId;
 
     connectedCallback(){
-        console.log('hello')
+        //console.log('hello')
     }
 
     handleIdChange(e){

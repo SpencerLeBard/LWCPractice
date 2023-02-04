@@ -5,44 +5,30 @@ const columns = [
     { label: 'First Name', fieldName: 'FirstName' },
     { label: 'Last Name', fieldName: 'LastName' },
 ];
+
+const DELAY = 300;
+
 export default class SearchBox extends LightningElement {
 
 
     @track contactsList;
     @track contact;
-    @track data = [];
     @track columns = columns;
-    @track param = ''
-    @track clickedButtonLabel;
+    @track contactInput = '';
 
-    @track contactArr = [];
     
-    handleClick(event) {
-        this.clickedButtonLabel = event.target.label;
-        //console.log('click in search box')
-        
-    }
-
-    handleTyping(event) {
-        window.clearTimeout(this.delayTimeout);
-        const contactInput = event.target.value;
-        this.delayTimeout = setTimeout(() => {
-            this.contactInput = contactInput;
-        }, DELAY);
-    }
-
-    // TODO : Apparently this wire method fires as it renders like a connected callback
-    // but does not do anything when i click the button :(
+    // TODO : throws error right when I start typing
     @wire(contactQuery , {contactInput: '$contactInput'})
-    getContact({data, error}){
-        // console.log('hit getcontact method')
-        if(data){
-            this.contactsList = data
-            // console.log('has data')
-        }else if (error){
-            this.error = error
-            console.error(this.error)
-        }
+        contactsList;
+
+        handleTyping(event) {
+            console.log('typing...')
+            window.clearTimeout(this.delayTimeout);
+            const contactInput = event.target.value;
+            this.delayTimeout = setTimeout(() => {
+                this.contactInput = contactInput;
+                console.log(contactInput)
+            }, DELAY);
     }
 
 }

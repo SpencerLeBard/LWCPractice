@@ -12,7 +12,7 @@ export default class ToDoManager extends LightningElement {
 
        /* eslint-disable */ setInterval( () => {
             this.getTime();
-            console.log("Set Inteval called");
+            //console.log("Set Inteval called");
         }, 10000)
     }
 
