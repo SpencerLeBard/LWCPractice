@@ -4,9 +4,6 @@ import contactQuery from '@salesforce/apex/QueryContacts.contactQuery';
 const columns = [
     { label: 'First Name', fieldName: 'FirstName' },
     { label: 'Last Name', fieldName: 'LastName' },
-    { label: 'Title', fieldName: 'Title' },
-    { label: 'Phone', fieldName: 'Phone', type: 'phone' },
-    { label: 'Email', fieldName: 'Email', type: 'email' },
 ];
 export default class SearchBox extends LightningElement {
 
@@ -20,16 +17,23 @@ export default class SearchBox extends LightningElement {
 
     @track contactArr = [];
     
-    //need to handle this click through a method
     handleClick(event) {
         this.clickedButtonLabel = event.target.label;
-        console.log('click in search box')
+        //console.log('click in search box')
         
+    }
+
+    handleTyping(event) {
+        window.clearTimeout(this.delayTimeout);
+        const contactInput = event.target.value;
+        this.delayTimeout = setTimeout(() => {
+            this.contactInput = contactInput;
+        }, DELAY);
     }
 
     // TODO : Apparently this wire method fires as it renders like a connected callback
     // but does not do anything when i click the button :(
-    @wire(contactQuery , {contactInput: '$param'})
+    @wire(contactQuery , {contactInput: '$contactInput'})
     getContact({data, error}){
         // console.log('hit getcontact method')
         if(data){

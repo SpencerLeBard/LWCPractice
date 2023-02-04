@@ -1,17 +1,33 @@
 <template>
     <lightning-card class="top-card"> Contacts Search
         <!-- TODO: Add modal somehow -->
-        <!-- <lightning-input name="param" value={param} onchange={handleClick}></lightning-input> -->
 
-        <lightning-button variant="brand" label="Search" title="Search" onclick={getContact}
-            class="slds-m-left_x-small"></lightning-button>
+        <!-- <lightning-input name="param" value={contactInput} onchange={handleTyping}></lightning-input> -->
 
-        <lightning-datatable key-field="id" data={contactsList} columns={columns}>Data Title</lightning-datatable>
+        <!-- <lightning-button variant="brand" label="Search" title="Search" onclick={getContact}
+            class="slds-m-left_x-small"></lightning-button> -->
 
-        <!-- <template for:each={contactList} for:item="contact">
+        <!-- <lightning-datatable key-field="id" data={contactsList} columns={columns}>Data Title</lightning-datatable> -->
+
+        <!-- <template for:each={contactsList} for:item="contact">
             <div class="item-class" key={contact.Id}>
                 <span class="slds-text-heading_label accounts">{contact.Name}</span>
             </div>
         </template> -->
+        <lightning-card title="Contact Search" icon-name="custom:custom63">
+            <div class="slds-m-around_medium">
+                <lightning-input type="search" onchange={handleTyping} class="slds-m-bottom_small" label="Search"
+                    value={contactInput}></lightning-input>
+                <template lwc:if={contactsList}>
+                    <template for:each={contactsList} for:item="contact">
+                        <p key={contact.Id}>{contact.Name}</p>
+                    </template>
+                </template>
+                <template lwc:elseif={contacts.error}>
+                    <c-error-panel errors={contacts.error}></c-error-panel>
+                </template>
+            </div>
+        </lightning-card>
+
     </lightning-card>
 </template>
