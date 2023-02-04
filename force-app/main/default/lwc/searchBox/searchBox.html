@@ -2,12 +2,11 @@
     <lightning-card class="top-card"> Contacts Search
         <!-- TODO: Add modal somehow -->
         <!-- <lightning-input name="param" value={param} onchange={handleClick}></lightning-input> -->
-        <!-- <lightning-button label="Search Contacts" onclick={getContact}>Button Title</lightning-button> -->
 
         <lightning-button variant="brand" label="Search" title="Search" onclick={getContact}
             class="slds-m-left_x-small"></lightning-button>
 
-        <lightning-datatable key-field="id" data={contactList} columns="columns">Data Title</lightning-datatable>
+        <lightning-datatable key-field="id" data={contactsList} columns={columns}>Data Title</lightning-datatable>
 
         <!-- <template for:each={contactList} for:item="contact">
             <div class="item-class" key={contact.Id}>
