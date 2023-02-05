@@ -16,18 +16,16 @@ export default class SearchBox extends LightningElement {
     @track columns = columns;
     @track contactInput = '';
 
-    
-    // TODO : throws error right when I start typing
+    //Not displaying on screen only in console 
     @wire(contactQuery , {contactInput: '$contactInput'})
         contactsList;
 
         handleTyping(event) {
-            console.log('typing...')
             window.clearTimeout(this.delayTimeout);
             const contactInput = event.target.value;
             this.delayTimeout = setTimeout(() => {
                 this.contactInput = contactInput;
-                console.log(contactInput)
+                console.log('input: '+ contactInput)
             }, DELAY);
     }
 
