@@ -20,7 +20,7 @@
                 value={contactInput}></lightning-input>
             <template lwc:if={contactsList.data}>
                 <template for:each={contactsList.data} for:item="contact">
-                    <p key={contact.Id}>{contact.Name}</p>
+                    <p key={contact.Id}>{contact.firstName}</p>
                 </template>
             </template>
             <template lwc:elseif={contact.error}>
