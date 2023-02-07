@@ -25,7 +25,7 @@ export default class SearchBox extends LightningElement {
             const contactInput = event.target.value;
             this.delayTimeout = setTimeout(() => {
                 this.contactInput = contactInput;
-                console.log('input: '+ contactInput)
+                console.log('contactInput: '+ contactInput)
             }, DELAY);
     }
 
