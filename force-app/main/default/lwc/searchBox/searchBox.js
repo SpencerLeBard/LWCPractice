@@ -13,12 +13,24 @@ export default class SearchBox extends LightningElement {
 
     @track contactsList;
     @track contact;
+    @track arr = [];
     @track columns = columns;
     @track contactInput = '';
 
-    //Not displaying on screen only in console 
     @wire(contactQuery , {contactInput: '$contactInput'})
-        contactsList;
+    getContacts({ data, error }) {
+        if(data){
+        this.contactsList = data
+        for(let contact of this.contactsList){
+            this.arr.push(contact)
+            console.log(arr)
+        }
+        } else if (error){
+            this.error = error  
+        }
+    }
+  
+
 
         handleTyping(event) {
             window.clearTimeout(this.delayTimeout);

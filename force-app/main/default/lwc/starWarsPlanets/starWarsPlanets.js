@@ -1,3 +1,6 @@
 import { LightningElement } from 'lwc';
 
-export default class StarWarsPlanets extends LightningElement {}
+export default class StarWarsPlanets extends LightningElement {
+
+  
+}

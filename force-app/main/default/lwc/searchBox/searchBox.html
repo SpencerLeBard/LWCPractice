@@ -18,8 +18,8 @@
         <div class="slds-m-around_medium">
             <lightning-input type="search" onchange={handleTyping} class="slds-m-bottom_small" label="Search"
                 value={contactInput}></lightning-input>
-            <template lwc:if={contactsList.data}>
-                <template for:each={contactsList.data} for:item="contact">
+            <template lwc:if={contactsList}>
+                <template for:each={contactsList} for:item="contact">
                     <p key={contact.Id}>{contact.firstName}</p>
                 </template>
             </template>
