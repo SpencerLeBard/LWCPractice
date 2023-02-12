@@ -21,10 +21,7 @@ export default class SearchBox extends LightningElement {
     getContacts({ data, error }) {
         if(data){
         this.contactsList = data
-        for(let contact of this.contactsList){
-            this.arr.push(contact)
-            console.log(arr)
-        }
+        console.log(data)
         } else if (error){
             this.error = error  
         }
@@ -38,6 +35,8 @@ export default class SearchBox extends LightningElement {
             this.delayTimeout = setTimeout(() => {
                 this.contactInput = contactInput;
                 console.log('contactInput: '+ contactInput)
+                // TODO maybe call method here ?
+               // this.getContacts(contactInput)
             }, DELAY);
     }
 
