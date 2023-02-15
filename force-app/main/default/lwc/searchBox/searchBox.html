@@ -11,7 +11,7 @@
                 value={contactInput}></lightning-input>
             <template if:true={contactInput}>
                 <!-- TODO: displaying searched param in console, cannot display on screen -->
-                <lightning-datatable key-field="id" data={data} columns={columns}>
+                <lightning-datatable key-field="id" data={contactsList.data} columns={columns}>
                 </lightning-datatable>
             </template>
             <!-- <template lwc:if={data}>

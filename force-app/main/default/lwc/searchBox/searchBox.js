@@ -22,6 +22,7 @@ export default class SearchBox extends LightningElement {
     getContacts({ data, error }) {
         if(data){
         console.log(data)
+        contactsList = data
         } else if (error){
             this.error = error  
         }
