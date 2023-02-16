@@ -1,28 +1,15 @@
 <template>
-    <!-- <lightning-card class="top-card"> Contacts Search -->
-    <!-- <template for:each={contactsList} for:item="contact">
-            <div class="item-class" key={contact.Id}>
-                <span class="slds-text-heading_label accounts">{contact.Name}</span>
-            </div>
-        </template> -->
     <lightning-card title="Contact Search" icon-name="custom:custom63">
-        <div class="slds-m-around_medium">
-            <lightning-input type="search" onchange={handleTyping} class="slds-m-bottom_small" label="Search"
-                value={contactInput}></lightning-input>
-            <template if:true={contactInput}>
-                <!-- TODO: displaying searched param in console, cannot display on screen -->
-                <lightning-datatable key-field="id" data={contactsList.data} columns={columns}>
-                </lightning-datatable>
-            </template>
-            <!-- <template lwc:if={data}>
+        <lightning-input type="search" onchange={handleTyping} class="slds-m-bottom_small" label="Search"
+            value={contactInput}></lightning-input>
+        <lightning-layout>
+            <template if:true={contactInput}> input detected
                 <template for:each={data} for:item="contact">
-                    <p key={contact.Id}>{contact.id}</p>
+                    <lightning-layout-item key={contact.id}>
+                        {contact.id}
+                    </lightning-layout-item>
                 </template>
             </template>
-            <template lwc:elseif={contact.error}>
-                <c-error-panel errors={contact.error}></c-error-panel>
-            </template> -->
-        </div>
+        </lightning-layout>
     </lightning-card>
-    <!-- </lightning-card> -->
 </template>

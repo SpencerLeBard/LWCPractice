@@ -11,20 +11,18 @@ const columns = [
 export default class SearchBox extends LightningElement {
 
 
-    @track contactsList;
+    @track contactsList = [];
     @track contact;
-    @track arr = [];
     @track columns = columns;
     @track contactInput = '';
     
 
     @wire(contactQuery , {contactInput: '$contactInput'})
-    getContacts({ data, error }) {
+    getContacts({data, error}){
         if(data){
-        console.log(data)
-        contactsList = data
+            console.log(data.data)
         } else if (error){
-            this.error = error  
+            console.log(error)
         }
     }
   
