@@ -1,5 +1,4 @@
 import { LightningElement, wire } from 'lwc';
-
 import getReportData from '@salesforce/apex/ReportController.getReportData';
 
 export default class salesDashboard extends LightningElement {
@@ -9,6 +8,7 @@ export default class salesDashboard extends LightningElement {
     wiredReportData({ error, data }) {
         if (data) {
             this.reportData = data;
+            console.log('reportData: ', this.reportData)
         } else if (error) {
             console.error(error);
         }
