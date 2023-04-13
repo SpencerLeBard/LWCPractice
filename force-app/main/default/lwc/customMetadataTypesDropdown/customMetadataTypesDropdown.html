@@ -2,7 +2,15 @@
   <div class="FavPlayerSelection white-background">
     <h4>Favorite Player Selection</h4>
     <lightning-combobox class="black-text" name="Players" label="Players" placeholder="Choose Player"
-      value={selectedPlayer} onchange={handleChange} options={playerOptions}>
+      value={selectedPlayer} onchange={handleChangePlayer} options={playerOptions}>
     </lightning-combobox>
   </div>
+
+  <div class="FavTeamSelection white-background">
+    <h4>Favorite Team Selection</h4>
+    <lightning-combobox class="black-text" name="Teams" label="Teams" placeholder="Choose Team" value={selectedTeam}
+      onchange={handleChangeTeam} options={teamOptions}>
+    </lightning-combobox>
+  </div>
+
 </template>
