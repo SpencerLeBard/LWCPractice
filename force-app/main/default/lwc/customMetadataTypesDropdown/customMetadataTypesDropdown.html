@@ -1,9 +1,8 @@
 <template>
   <div class="FavPlayerSelection white-background">
     <h4>Favorite Player Selection</h4>
-    <lightning-combobox class="black-text" name="Players" label="Players" placeholder="Choose Player" value={value}
-      onchange={handleChange} options={options}>
-      <p>Selected option: {value}</p>
+    <lightning-combobox class="black-text" name="Players" label="Players" placeholder="Choose Player"
+      value={selectedPlayer} onchange={handleChange} options={playerOptions}>
     </lightning-combobox>
   </div>
 </template>
