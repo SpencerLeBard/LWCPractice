@@ -36,3 +36,5 @@ public with sharing class ReportController {
         return factDetails;
         }
 }
+
+// 10:51:45:210 USER_DEBUG [26]|DEBUG|fact details: Reports.ReportFactWithDetails[aggregates=(Reports.SummaryValue[label=9, value=9]), key=0!T, rows=(Reports.ReportDetailRow[dataCells=(Reports.ReportDataCell[label=Polaris Auto EU, value=0015Y00004nt2nmQAA], Reports.ReportDataCell[label=Polaris Auto Inc, value=0015Y00004nt2lqQAA], Reports.ReportDataCell[label=Spencer LeBard, value=0055Y00000GYEddQAH])], Reports.ReportDetailRow[dataCells=(Reports.ReportDataCell[label=Polaris Auto Inc, value=0015Y00004nt2lqQAA], Reports.ReportDataCell[l

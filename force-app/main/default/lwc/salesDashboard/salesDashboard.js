@@ -7,8 +7,8 @@ export default class salesDashboard extends LightningElement {
     @wire(getReportData)
     wiredReportData({ error, data }) {
         if (data) {
+            console.log('Raw reportData: ', data[0] )
             this.reportData = data;
-            console.log('reportData: ', this.reportData)
         } else if (error) {
             console.error(error);
         }
