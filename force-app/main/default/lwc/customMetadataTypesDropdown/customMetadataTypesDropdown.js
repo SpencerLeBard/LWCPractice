@@ -12,7 +12,7 @@ export default class CustomMetadataTypesDropdown extends LightningElement {
 @wire(getFavoritePlayerPicklistValues)
 getFavPlayer({ data, error }) {
   if (data) {
-    for(let i = 0; i <= 1; i++){
+    for(let i = 0; i <= data.length - 1; i++){
       let player = data[i];
       // console.log({label: player, value: `${player + i}`})
       this.favPlayers.push({label: player, value: `${player + i}`});
