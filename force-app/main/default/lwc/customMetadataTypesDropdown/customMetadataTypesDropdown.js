@@ -49,7 +49,7 @@ get playerOptions() {
 
 handleChangePlayer(event) {
   this.selectedPlayer = event.detail.value;
-    // console.log('Selected player:', this.selectedPlayer);
+    console.log('Selected player:', this.selectedPlayer);
 }
 
 get teamOptions() {
@@ -60,7 +60,7 @@ get teamOptions() {
 
 handleChangeTeam(event) {
   this.selectedTeam = event.detail.value;
-    // console.log('Selected Team:', this.selectedTeam);
+    console.log('Selected Team:', this.selectedTeam);
 }
 
     

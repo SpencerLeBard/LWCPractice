@@ -1,16 +1,23 @@
 <template>
-  <div class="FavPlayerSelection white-background">
-    <h4>Favorite Player Selection</h4>
-    <lightning-combobox class="black-text" name="Players" label="Players" placeholder="Choose Player"
-      value={selectedPlayer} onchange={handleChangePlayer} options={playerOptions}>
-    </lightning-combobox>
-  </div>
+  <lightning-card>
+    <div class="FavPlayerSelection white-background">
+      <h4>Favorite Player Selection</h4>
+      <lightning-combobox class="black-text" name="Players" label="Players" placeholder="Choose Player"
+        value={selectedPlayer} onchange={handleChangePlayer} options={playerOptions}>
+        <!-- TODO WHY IS THIS NOT DISPLAYING -->
+        <template if:true={selectedPlayer}>
+          <span>Selected Player: {selectedPlayer}</span>
+        </template>
+      </lightning-combobox>
+    </div>
 
-  <div class="FavTeamSelection white-background">
-    <h4>Favorite Team Selection</h4>
-    <lightning-combobox class="black-text" name="Team" label="Team" placeholder="Choose Team" value={selectedTeam}
-      onchange={handleChangeTeam} options={teamOptions}>
-    </lightning-combobox>
-  </div>
-
+    <div class="FavTeamSelection white-background">
+      <h4>Favorite Team Selection</h4>
+      <lightning-combobox class="black-text" name="Team" label="Team" placeholder="Choose Team" value={selectedTeam}
+        onchange={handleChangeTeam} options={teamOptions}>
+        <p>Selected Player: {selectedTeam}</p>
+      </lightning-combobox>
+    </div>
+    <!-- <h1> You have selected {selectedPlayer} as your favorite player and {selectedTeam} as your favorite team! </h1> -->
+  </lightning-card>
 </template>
