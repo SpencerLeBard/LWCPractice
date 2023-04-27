@@ -1,3 +1,8 @@
 <template>
-  <c-parent-to-child message={textFromParent}></c-parent-to-child>
+  <lightning-card title="My Child Component">
+    <h3>
+      Text from Parent: {getValueFromParent}
+    </h3>
+    <lightning-button label="Send Event to Parent" onclick={handleClick}></lightning-button>
+  </lightning-card>
 </template>

@@ -1,10 +1,10 @@
 import { LightningElement, wire } from 'lwc';
 import { publish, MessageContext } from 'lightning/messageService';
-import MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
+// import MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
 
 
 export default class MyMessageService extends LightningElement {
-  
+
   @wire(MessageContext)
   messageContext;
 
