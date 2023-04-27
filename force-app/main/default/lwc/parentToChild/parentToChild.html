@@ -1,0 +1,6 @@
+<template>
+  <lightning-card title="My Parent Component">
+    <p>Message from child component: {messageFromChild}</p>
+    <c-child-to-parent onmessagefromchild={handleChildEvent}></c-child-to-parent>
+  </lightning-card>
+</template>
