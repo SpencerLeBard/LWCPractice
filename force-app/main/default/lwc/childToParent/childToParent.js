@@ -1,5 +1,4 @@
 import { LightningElement, api } from 'lwc';
-// import { fireEvent } from 'c/pubsub';
 
 export default class ChildToParent extends LightningElement {
 
@@ -7,10 +6,12 @@ export default class ChildToParent extends LightningElement {
 
   @api getValueFromParent;
 
+  @api messageFromChild = 'hello from child component';
+
 
   handleClick() {
     const event = new CustomEvent('myevent', {
-      detail: { data: 'Hello from child component' }
+      detail: { data: this.messageFromChild }
     });
     this.dispatchEvent(event, 'myevent', event.detail.data);
     console.log('child: ' + event.detail.data)

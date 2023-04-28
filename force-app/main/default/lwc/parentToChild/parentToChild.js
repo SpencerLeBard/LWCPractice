@@ -1,4 +1,6 @@
 import { LightningElement, track, api } from 'lwc';
+import { subscribe, unsubscribe, MessageContext } from "lightning/messageService";
+import ACCOUNT_CHANNEL from "@salesforce/messageChannel/AccountDataMessageChannel__c";
 
 export default class ParentToChild extends LightningElement {
 
@@ -12,4 +14,15 @@ export default class ParentToChild extends LightningElement {
     console.log('message recived by parent: ' + event.detail.data)
     this.messageFromChild = event.detail.data;
   }
+  lMCSubscribe(){
+    this.subscription = subscribe(
+      this.messageContext,
+      ACCOUNT_CHANNEL,
+      (message) => this.handleMessage(message)
+    );
+  }
+
+
 }
+
+

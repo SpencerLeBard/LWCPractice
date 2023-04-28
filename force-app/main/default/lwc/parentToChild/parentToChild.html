@@ -1,7 +1,6 @@
 <template>
   <lightning-card title="My Parent Component">
     <h2>Message From Child: {messageFromChild} </h2>
-    <c-child-to-parent get-value-from-parent={getValueFromParent}
-      onhandlechildevent={handleChildEvent}></c-child-to-parent>
+    <c-child-to-parent get-value-from-parent={getValueFromParent} onmyevent={handleChildEvent}></c-child-to-parent>
   </lightning-card>
 </template>
