@@ -1,13 +1,17 @@
-public class PracticeBatch implements Database.Batchable<SObject> {
+public class PracticeScheduledBatch implements Schedulable {
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        return Database.Batchable(Datbase.getQueryLocator('SELECT id, name, FROM Account'));
+        // collect the batches of records or objects to be passed to execute
+          return Database.getQueryLocator([Select LeadSource From Lead ]);
     }
-
-    public void execute(Database.BatchableContext bc, List<Account> scope) {
-        for(Account a : scope) {
-            a.name = 'Test';
-        }
-        update scope;
-    }
+    public void execute(Database.BatchableContext bc, List<Lead> leads){
+         // process each batch of records
+            for (Lead Lead : leads) {
+                lead.LeadSource = 'Dreamforce';
+            }
+        update leads;
+    }    
+    public void finish(Database.BatchableContext bc){
+      //do something at the end
+      }
 
 }

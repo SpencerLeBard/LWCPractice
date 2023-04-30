@@ -12,6 +12,7 @@ public class LeadProcessor implements Database.Batchable<sObject> {
         update leads;
     }    
     public void finish(Database.BatchableContext bc){
+      //do something at the end
       }
 
 }
