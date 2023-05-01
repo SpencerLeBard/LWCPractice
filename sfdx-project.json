@@ -8,5 +8,5 @@
   "name": "newProjectManafest",
   "namespace": "",
   "sfdcLoginUrl": "https://spencerllc-dev-ed.my.salesforce.com",
-  "sourceApiVersion": "52.0"
+  "sourceApiVersion": "51.0"
 }
