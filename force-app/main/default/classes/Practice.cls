@@ -4,7 +4,7 @@ public class PracticeScheduledBatch implements Schedulable {
           return Database.getQueryLocator([Select LeadSource From Lead ]);
     }
     public void execute(Database.BatchableContext bc, List<Lead> leads){
-         // process each batch of records
+         // process each batch of records here
             for (Lead Lead : leads) {
                 lead.LeadSource = 'Dreamforce';
             }
