@@ -65,6 +65,3 @@ handleChangeTeam(event) {
 
     
 }
-
-
-

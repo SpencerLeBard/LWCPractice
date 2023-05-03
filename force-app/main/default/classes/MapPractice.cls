@@ -1,8 +1,6 @@
 public class MapPractice {
-    public static Map<Id,Account> practiceMap(){
-        List<Account> accountList = [SELECT Id, Name FROM Account];
-        Map<Id, Account> accountMap = new Map<Id, Account>(accountList);
+    public static void mapMethod(){ 
+    Map<id, Account> accountMap = new Map<id, Account>([SELECT id, name FROM Account]);
         System.debug(accountMap);
-        return accountMap;
-    } 
+    }
 }

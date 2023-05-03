@@ -1,7 +1,7 @@
 public with sharing class chatGPTController {
 
 @AuraEnabled(cacheable=true)
-public static String chatGPTResponse(){
+public static string chatGPTResponse(){
     String apiKey = [SELECT Key__c FROM OpenAPIKey__c LIMIT 1].Key__c;
     String orgID = 'org-cPUNw2Fgkyun710WHvW6cZ23';
     Http http = new Http();
@@ -21,6 +21,3 @@ public static String chatGPTResponse(){
     return res.getBody();
     }   
 }
-
-
-

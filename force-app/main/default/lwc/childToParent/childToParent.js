@@ -1,4 +1,5 @@
 import { LightningElement, api } from 'lwc';
+// import { fireEvent } from 'c/pubsub';
 
 export default class ChildToParent extends LightningElement {
 
