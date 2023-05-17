@@ -20,5 +20,4 @@ public with sharing class customSoccerMdtController {
                 return teamPicklist; 
             }
         } 
-        //[SELECT id, Label , Favorite_Player__c, Favorite_Team__c FROM Soccer__mdt ] RETURNS THE CMDT RECORD WITH AN ID NOT THE PICKLIST
-        //SELECT toLabel(Favorite_Player__c) FROM Soccer__mdt gives me "Favorite Player: Ronaldo"
+
