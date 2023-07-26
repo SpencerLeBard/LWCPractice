@@ -19,6 +19,7 @@ export default class SearchBox extends LightningElement {
     
     //need to handle this click through a method
     handleClick(event) {
+        console.log('click')
         this.clickedButtonLabel = event.target.label;
     }
 
