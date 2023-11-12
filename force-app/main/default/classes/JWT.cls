@@ -20,7 +20,7 @@ public class JWT {
     
     public JWT(String alg) {
         this.alg = alg;
-        this.validFor = 300;
+        this.validFor = 350;
     }
     
     

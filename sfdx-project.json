@@ -7,6 +7,11 @@
   ],
   "name": "newProjectManafest",
   "namespace": "",
+<<<<<<< HEAD
   "sfdcLoginUrl": "http://spencerllc-dev-ed.lightning.force.com",
   "sourceApiVersion": "52.0"
+=======
+  "sfdcLoginUrl": "https://spencerllc-dev-ed.my.salesforce.com",
+  "sourceApiVersion": "51.0"
+>>>>>>> c28fd4449b418da9ae58c4531a8e1258cecb6f9f
 }

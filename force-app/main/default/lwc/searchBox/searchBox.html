@@ -1,8 +1,16 @@
-<template >
-    <lightning-card class="top-card"> Contacts Search
-        <!-- TODO: Add modal somehow -->
-        <lightning-input name="param" value={param} onchange={handleClick}></lightning-input>
-        <lightning-button label="Search Contacts" onclick={getContacts}>Button Title</lightning-button>
-        <lightning-datatable key-field="id" data={contactsList} columns="columns">Data Dable Title</lightning-datatable>
+<template>
+    <lightning-card title="Contact Search" icon-name="custom:custom63">
+        <lightning-input type="search" onchange={handleTyping} class="slds-m-bottom_small" label="Search"
+            value={contactInput}></lightning-input>
+        <template lwc:if={contactInput}>
+            <template for:each={contacts.data} for:item="contact">
+                <p key={contact.Id}>{contact.id}</p>
+                <p key={contact.Id}>{contact.Name}</p>
+
+            </template>
+        </template>
+        <template lwc:elseif={contacts.error}>
+            {contacts.error}
+        </template>
     </lightning-card>
 </template>

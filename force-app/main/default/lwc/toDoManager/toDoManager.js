@@ -12,7 +12,7 @@ export default class ToDoManager extends LightningElement {
 
        /* eslint-disable */ setInterval( () => {
             this.getTime();
-            console.log("Set Inteval called");
+            //console.log("Set Inteval called");
         }, 10000)
     }
 
@@ -52,7 +52,7 @@ export default class ToDoManager extends LightningElement {
     //event handler for todo list
     addToDoHandler(){
         const inputBox = this.template.querySelector("lightning-input");
-        console.log('current value: ' , inputBox.value);
+        //console.log('current value: ' , inputBox.value);
         
         const todo = {
             toDoId: this.todos.length ,

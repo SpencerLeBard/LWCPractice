@@ -1,0 +1,13 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item size="9">
+            <h1> ChatGPT Integration Demo</h1>
+            <lightning-input variant="label-hidden" value={question} onchange={assignData}></lightning-input>
+
+        </lightning-layout-item>
+        <lightning-layout-item size="3">
+            <lightning-button label="Ask" onclick={getChatGPTResponse}></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout><br /><br />
+    {response}
+</template>
